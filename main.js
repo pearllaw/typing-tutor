@@ -1,20 +1,28 @@
 var sentence = 'grumpy wizards make toxic brew for the evil queen and jack'
-var word = sentence.split(' ') //split into array of words ['grumpy', 'wizards'..]
-var character = word.splice(' ') //split words into single characters
-var characterArray = []
 
-for (var i = 0; i < character.length; i++) {
-  var objects = {}
-  var key = "letter"
-  objects[key] = character[i] // objects for each character
-  characterArray.push(objects) // array of objects for each character
-}
+var characters = []
 
-function singleCharacter(array, key, value) {
-  for (var i = 0; i < array.length; i++) {
-    if (array[i][key] === value) {
-      return array[i]
-    }
+for (var i = 0; i < sentence.length; i++) {
+  var character = {
+    key: sentence[i]
   }
-  return null
+  characters.push(character)
 }
+
+function renderCharacter(character) {
+  var $character = document.createElement('span')
+  $character.textContent = character.key
+  return $character
+}
+
+function renderAllCharacters(allCharacters) {
+  var $characters = document.createElement('div')
+
+  for (var i = 0; i < allCharacters.length; i++) {
+    var $allCharacters = allCharacters[i]
+    $characters.appendChild(renderCharacter($allCharacters))
+  }
+  document.body.appendChild($characters)
+}
+
+console.log(renderAllCharacters(characters))
