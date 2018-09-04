@@ -2,7 +2,20 @@
   background-color: antiquewhite;
   color: black;
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+div {
   text-align: center;
   font-size: 1.5rem;
   margin-top: 200px;
+}
+
+span:hover {
+  background-color: yellow;
 }
