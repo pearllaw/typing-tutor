@@ -34,6 +34,7 @@ console.log(renderAllCharacters(characters))
 for (var i = 0; i < characters.length; i++) {
   var appState = {
     key: characters[i],
-    currentChar: characters.indexOf(characters[i])
+    currentChar: characters.indexOf(characters[i]),
+    failures: 0,
   }
 }
