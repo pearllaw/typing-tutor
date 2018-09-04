@@ -15,6 +15,7 @@ function renderCharacter(character) {
   return $character
 }
 
+
 function renderAllCharacters(allCharacters) {
   var $characters = document.createElement('div')
 
@@ -26,3 +27,9 @@ function renderAllCharacters(allCharacters) {
 }
 
 console.log(renderAllCharacters(characters))
+
+for (var i = 0; i < characters.length; i++) {
+  var appState = {
+    key: characters[i]
+  }
+}
