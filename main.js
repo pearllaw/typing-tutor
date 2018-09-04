@@ -1,24 +1,22 @@
 var sentence = 'grumpy wizards make toxic brew for the evil queen and jack'
 
-var characters = []
-
 var appState = {
     characters: [],
-    currentCharacter: 0,
-    failures: 0,
+    currentCharacterIndex: 0,
+    failures: 0
 }
 
 for (var i = 0; i < sentence.length; i++) {
   var character = {
     key: sentence[i]
   }
-  characters.push(character)
+  appState.characters.push(character)
 }
 
-function renderCharacter(character) {
+function renderCharacter(character, index) {
   var $character = document.createElement('span')
   $character.textContent = character.key
-  if ($character[i] === appState.currentCharacter) {
+  if (index === appState.currentCharacterIndex) {
     $character.classList.add('highlighted')
   }
   return $character
@@ -30,9 +28,13 @@ function renderAllCharacters(allCharacters) {
 
   for (var i = 0; i < allCharacters.length; i++) {
     var $allCharacters = allCharacters[i]
-    $characters.appendChild(renderCharacter($allCharacters))
+    $characters.appendChild(renderCharacter($allCharacters, i))
   }
   document.body.appendChild($characters)
 }
 
-console.log(renderAllCharacters(characters))
+console.log(renderAllCharacters(appState.characters))
+
+window.addEventListener('keydown', function () {
+  return renderAllCharacters(appState.characters)
+})
