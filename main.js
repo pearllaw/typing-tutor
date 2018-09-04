@@ -12,6 +12,9 @@ for (var i = 0; i < sentence.length; i++) {
 function renderCharacter(character) {
   var $character = document.createElement('span')
   $character.textContent = character.key
+  $character.onmouseover = function () {
+    $character.classList.add('highlighted')
+  }
   return $character
 }
 
