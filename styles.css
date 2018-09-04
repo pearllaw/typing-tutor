@@ -16,6 +16,6 @@ div {
   margin-top: 200px;
 }
 
-span:hover {
+.highlighted {
   background-color: yellow;
 }
