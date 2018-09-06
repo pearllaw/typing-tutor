@@ -19,3 +19,7 @@ div {
 .highlighted {
   background-color: yellow;
 }
+
+.failed {
+  background-color: red;
+}

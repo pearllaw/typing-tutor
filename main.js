@@ -19,6 +19,9 @@ function renderCharacter(character, index) {
   if (index === appState.currentCharacterIndex) {
     $character.classList.add('highlighted')
   }
+  if (appState.failures > 0) {
+    $character.classList.replace('highlighted', 'failed')
+  }
   return $character
 }
 
