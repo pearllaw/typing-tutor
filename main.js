@@ -22,7 +22,6 @@ function renderCharacter(character, index) {
   return $character
 }
 
-
 function renderAllCharacters(allCharacters) {
   var $characters = document.createElement('div')
 
@@ -38,3 +37,7 @@ console.log(renderAllCharacters(appState.characters))
 window.addEventListener('keydown', function () {
   return renderAllCharacters(appState.characters)
 })
+
+if (appState.currentCharacterIndex === KeyboardEvent.key) {
+  appState.failures++
+}
