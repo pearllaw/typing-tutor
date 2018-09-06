@@ -34,10 +34,9 @@ function renderAllCharacters(allCharacters) {
 
 console.log(renderAllCharacters(appState.characters))
 
-window.addEventListener('keydown', function () {
+window.addEventListener('keydown', function (event) {
+  if (appState.characters[0] !== event.key) {
+    appState.failures++
+  }
   return renderAllCharacters(appState.characters)
 })
-
-if (appState.currentCharacterIndex === KeyboardEvent.key) {
-  appState.failures++
-}
